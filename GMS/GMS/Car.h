@@ -4,7 +4,7 @@
 using namespace std;
 class Car//abstract class
 {
-private :
+protected: 
 	int carNumber;
 	string fullName;
 	int Age;
@@ -12,13 +12,22 @@ private :
 	string racing_Team;
 	float Speed;
 	float Capacity;
-	float perf_score;
 	static int counter;
-	
+	float perf_score;
 public:
 	Car(int num, string name, int age, string type, string team, float spd, float cap);
 	virtual void calc_per_score(float s, float cap)=0;
-	virtual void diplay_info();
+	virtual void display_info();
 	~Car();
+	void setAge(int a);
+	int getAge();
+	void setSpeed(float a);
+	float getSpeed();
+	void setCapacity(float a);
+	float getCapacity();
+    int ret_carNum();
+	void setRacingTeam(string team);
+	string getRacingTeam();
 };
+
 
